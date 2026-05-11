@@ -1,0 +1,43 @@
+// Naive Approach
+
+int search(int arr[], int n, int x){
+    for(int i=0; i<n; i++){
+        if(arr[i] == x){
+            return x;
+        }
+    }
+    return -1;
+}
+
+
+// TC: O(N)  AX: O(1)
+
+// Efficient Solution
+
+
+int search(int arr[], int n, int x){
+    int low =0 , high = n-1;
+    while(low <= high){
+        int mid = (low + high)/2;
+        if(arr[mid == x]) return mid;
+        if(arr[mid <= arr[mid]]){
+            if(x > arr[low] && x < arr[mid]){
+                high = mid - 1;
+            } else{
+                low = mid + 1;
+            }
+        } else{
+            if(x > arr[mid] && x <= arr[high]){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
+
+
+// TC: O(N)
+// AS: O(1)
+
